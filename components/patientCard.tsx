@@ -1,6 +1,6 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
-
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons"
 const profilepfp = require("../assets/images/profile-pfp.png");
 
 interface PatientCardProps {
@@ -48,9 +48,11 @@ const PatientCard: React.FC<PatientCardProps> = ({
       <Text style={styles.text}>{dataNascimento}</Text>
     </View>
   </View>
-
   <Image source={require("../assets/images/profile-pfp.png")} style={styles.image} />
 </View>
+  <TouchableOpacity className="px-4 py-2" onPress={() => {}}>
+        <Ionicons name="trash-outline" size={24} />
+      </TouchableOpacity>
     </View>
 );
 };
@@ -94,7 +96,7 @@ const styles = StyleSheet.create({
 
   },
   textContainer: {
-    flex: 1, // Faz os textos ocuparem o espaço disponível ao lado da imagem
+    flex: 1,
   },
 });
 
