@@ -1,22 +1,26 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons"
-const profilepfp = require("../assets/images/profile-pfp.png");
+
 
 interface PatientCardProps {
-  nome: string;
-  sexo: string;
-  naturalidade: string;
-  localNascimento: string;
-  dataNascimento: string;
+  id: string
+  nome: string
+  sexo: string
+  naturalidade: string
+  localNascimento: string
+  dataNascimento: string
+  onDelete: (id: string) => void
 }
 
 const PatientCard: React.FC<PatientCardProps> = ({
+  id,
   nome,
   sexo,
   naturalidade,
   localNascimento,
   dataNascimento,
+  onDelete
 }) => {
   console.log(nome, sexo, naturalidade, localNascimento, dataNascimento);
   return (
@@ -50,7 +54,7 @@ const PatientCard: React.FC<PatientCardProps> = ({
   </View>
   <Image source={require("../assets/images/profile-pfp.png")} style={styles.image} />
 </View>
-  <TouchableOpacity className="px-4 py-2" onPress={() => {}}>
+  <TouchableOpacity className="px-4 py-2" onPress={() => onDelete(id)}>
         <Ionicons name="trash-outline" size={24} />
       </TouchableOpacity>
     </View>

@@ -1,8 +1,8 @@
 export interface Paciente {
-  id?: string;
+  id: string;
   nome: string;
-  sexo?: string;
-  naturalidade?: string;
-  localNascimento?: string;
-  dataNascimento?: string;
+  sexo: string;
+  naturalidade: string;
+  localNascimento: string;
+  dataNascimento: string;
 }

@@ -3,25 +3,31 @@ import React, { useEffect, useState } from 'react'
 import HeaderWithMenu from '../components/headerMenu'
 import PatientCard from '../components/patientCard'
 import { router } from 'expo-router'
-import { getDatabase, ref, onValue } from "firebase/database"
+import { getPacientes, deletePaciente } from "../services/pacientes"
+import { Paciente } from '../types/Paciente'
 
 const Pacientes = () => {
-  const [pacientes, setPacientes] = useState([])
+  const [pacientes, setPacientes] = useState<Paciente[]>([])
+
+  const fetchPacientes = async () => {
+    const lista = await getPacientes()
+    setPacientes(lista)
+  }
 
   useEffect(() => {
-    const db = getDatabase()
-    const pacientesRef = ref(db, 'pacientes')  // ajusta o path se for diferente
-    onValue(pacientesRef, (snapshot) => {
-      const data = snapshot.val()
-      if (data) {
-        const listaPacientes = Object.keys(data).map((key) => ({
-          id: key,
-          ...data[key]
-        }))
-        setPacientes(listaPacientes)
-      }
-    })
+    fetchPacientes()
   }, [])
+
+  const handleDelete = async (id: string) => {
+    try {
+      await deletePaciente(id)
+      console.log("Paciente deletado com sucesso")
+
+      setPacientes((prevPacientes) => prevPacientes.filter(p => p.id !== id))
+    } catch (error) {
+      console.error("Erro ao deletar paciente:", error)
+    }
+  }
 
   return (
     <View>
@@ -37,11 +43,13 @@ const Pacientes = () => {
         {pacientes.map((paciente) => (
           <PatientCard
             key={paciente.id}
+            id={paciente.id} 
             nome={paciente.nome}
             sexo={paciente.sexo}
             naturalidade={paciente.naturalidade}
             localNascimento={paciente.localNascimento}
             dataNascimento={paciente.dataNascimento}
+            onDelete={handleDelete}
           />
         ))}
       </ScrollView>
