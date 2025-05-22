@@ -7,7 +7,9 @@ const SigninScreen = () => {
 
   return (
     <View>
-      <LoginScreen onSuccess={() => router.replace("/")} />
+      <View style={{ marginTop: 250, width: 320, alignSelf: 'center', justifyContent:"center" }}>
+        <LoginScreen onSuccess={() => router.replace("/")} />
+      </View>
     </View>
   );
 };

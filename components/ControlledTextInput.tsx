@@ -21,10 +21,21 @@ const ControlledTextInput = ({ name, control, readOnly, ...props }: Props) => {
       <TextInput
         {...props}
         readOnly={readOnly}
-        className={[
-          "text-2xl h-12 border-gray-300 rounded-lg px-4 py-2 border bg-white",
-          readOnly && "opacity-50",
-        ].join(" ")}
+        style={[
+    {
+      fontSize: 20,
+      height: 48,
+      borderColor: '#D1D5DB', // gray-300
+      borderWidth: 1,
+      borderRadius: 12,
+      paddingHorizontal: 16,
+      paddingVertical: 8,
+      backgroundColor: 'white',
+      opacity: readOnly ? 0.5 : 1,
+      color: 'black',
+    },
+    props.style, // pra respeitar estilos externos, se houver
+  ]}
         onChangeText={onChange}
         onBlur={onBlur}
         value={value}

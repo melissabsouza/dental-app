@@ -1,26 +1,27 @@
+import HeaderWithoutMenu from '@/components/headerMenuX';
 import { Link } from 'expo-router';
 import React from 'react';
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 // import HeaderWithoutMenu from '../components/headerMenuX';
 
-// const perfilIMG = require("../../../assets/images/perfil.png");
-// const calendarioIMG = require("../../../assets/images/calendar.png");
-// const listaPacienteIMG = require("../../../assets/images/lista_paciente.png");
-// const faqIMG = require("../../../assets/images/faq.png");
-// const chatIMG = require("../../../assets/images/chat_bubble.png");
-// const globoIMG = require("../../../assets/images/globe.png");
-// const configuracoesIMG = require("../../../assets/images/Settings.png");
+const perfilIMG = require("../assets/images/perfil.png");
+const calendarioIMG = require("../assets/images/calendar.png");
+const listaPacienteIMG = require("../assets/images/lista_paciente.png");
+const faqIMG = require("../assets/images/faq.png");
+const chatIMG = require("../assets/images/chat_bubble.png");
+const globoIMG = require("../assets/images/globe.png");
+const configuracoesIMG = require("../assets/images/Settings.png");
 
 const Menu = () => {
     return (
         <>
-            {/* <HeaderWithoutMenu /> */}
+            <HeaderWithoutMenu />
             <View>
                 <Text style={styles.menuTitle}>Menu</Text>
             </View>
             <View style={styles.menuDirection}>
                 <View style={styles.images}>
-                    {/* <Link href='/perfil'>
+                    <Link href='/perfil'>
                         <Image source={perfilIMG} style={styles.menuIcons}></Image>
                     </Link>
                     <Link href='/calendario'>
@@ -40,11 +41,11 @@ const Menu = () => {
                     </Link>
                     <Link href='/'>
                         <Image source={configuracoesIMG} style={styles.menuIcons}></Image>
-                    </Link> */}
+                    </Link>
                 </View>
 
                 <View style={styles.links}>
-                    {/* <Link href='/perfil'>
+                    <Link href='/perfil'>
                         <Text>Perfil</Text>
                     </Link>
                     <Link href='/calendario'>
@@ -64,7 +65,7 @@ const Menu = () => {
                     </Link>
                     <Link href='/'>
                         <Text>Configurações</Text>
-                    </Link> */}
+                    </Link>
                 </View>
             
             </View>
