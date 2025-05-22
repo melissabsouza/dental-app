@@ -1,6 +1,6 @@
 import React from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import HeaderWithMenu from '../../components/headerMenu';
+import HeaderWithMenu from '../components/headerMenu';
 
 const Faq= () => {
     return (

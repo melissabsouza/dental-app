@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, ActivityIndicator } from 'react-native';
 import { useForm } from "react-hook-form";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebaseConfig";
+import { auth } from "../firebaseConfig";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
@@ -43,7 +43,7 @@ const LoginScreen = ({ onSuccess }: Props) => {
   }
     return (
         <View style={styles.container}>
-            <Image source={require('../../assets/images/logoodpv.png')} style={styles.logo} />
+            <Image source={require('../assets/images/logoodpv.png')} style={styles.logo} />
             <View style={styles.loginBox}>
                 <Text style={styles.title}>Login</Text>
 

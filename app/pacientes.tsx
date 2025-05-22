@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import HeaderWithMenu from '../../components/headerMenu'
-import PatientCard from '../../components/patientCard'
+import HeaderWithMenu from '../components/headerMenu'
+import PatientCard from '../components/patientCard'
 
 const Pacientes = () => {
   return (

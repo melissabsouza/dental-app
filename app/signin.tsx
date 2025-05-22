@@ -1,4 +1,4 @@
-import LoginScreen from "../../components/LoginScreen";
+import LoginScreen from "../components/LoginScreen";
 import { useRouter } from "expo-router";
 import { View } from "react-native";
 

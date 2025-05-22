@@ -3,13 +3,13 @@ import React from 'react';
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 // import HeaderWithoutMenu from '../components/headerMenuX';
 
-const perfilIMG = require("../../../assets/images/perfil.png");
-const calendarioIMG = require("../../../assets/images/calendar.png");
-const listaPacienteIMG = require("../../../assets/images/lista_paciente.png");
-const faqIMG = require("../../../assets/images/faq.png");
-const chatIMG = require("../../../assets/images/chat_bubble.png");
-const globoIMG = require("../../../assets/images/globe.png");
-const configuracoesIMG = require("../../../assets/images/Settings.png");
+// const perfilIMG = require("../../../assets/images/perfil.png");
+// const calendarioIMG = require("../../../assets/images/calendar.png");
+// const listaPacienteIMG = require("../../../assets/images/lista_paciente.png");
+// const faqIMG = require("../../../assets/images/faq.png");
+// const chatIMG = require("../../../assets/images/chat_bubble.png");
+// const globoIMG = require("../../../assets/images/globe.png");
+// const configuracoesIMG = require("../../../assets/images/Settings.png");
 
 const Menu = () => {
     return (

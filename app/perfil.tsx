@@ -1,10 +1,9 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import HeaderWithMenu from '../../components/headerMenu'
+import HeaderWithMenu from '../components/headerMenu'
 import { StatusBar } from 'expo-status-bar'
 
-const profileIcon = require("../../../assets/images/profile-pfp.png");
-
+const profileIcon = require("../assets/images/profile-pfp.png");
 
 const Perfil = () => {
   return (

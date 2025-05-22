@@ -11,7 +11,7 @@ const HomeMobileUI = () => {
    const { isSignedIn } = useAuth();
 
   if (!isSignedIn) {
-    return <Redirect href="/(auth)/signin" />;
+    return <Redirect href="/signin" />;
   }
 
     return (

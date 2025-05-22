@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 
-const profilepfp = require("../../assets/images/profile-pfp.png");
+const profilepfp = require("../assets/images/profile-pfp.png");
 
 interface PatientCardProps {
   nome: string;
@@ -49,7 +49,7 @@ const PatientCard: React.FC<PatientCardProps> = ({
     </View>
   </View>
 
-  <Image source={require("../../assets/images/profile-pfp.png")} style={styles.image} />
+  <Image source={require("../assets/images/profile-pfp.png")} style={styles.image} />
 </View>
     </View>
 );

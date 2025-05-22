@@ -21,25 +21,16 @@ const ControlledTextInput = ({ name, control, readOnly, ...props }: Props) => {
       <TextInput
         {...props}
         readOnly={readOnly}
+        className={[
+          "text-2xl h-12 border-gray-300 rounded-lg px-4 py-2 border bg-white",
+          readOnly && "opacity-50",
+        ].join(" ")}
         onChangeText={onChange}
         onBlur={onBlur}
         value={value}
-        style={styles.input}
       />
       {error && <Text className="text-red-500 text-lg">{error.message}</Text>}
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-    
-    input: {
-        width: '100%',
-        padding: 12,
-        marginBottom: 15,
-        borderRadius: 5,
-        backgroundColor: '#003399',
-        color: '#ffffff',
-    },
-});
 export default ControlledTextInput;

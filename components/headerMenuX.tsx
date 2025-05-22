@@ -2,21 +2,22 @@ import { Link } from 'expo-router';
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
-const logoOdpv = require("../../assets/images/logoodpv.png");
-const menu = require("../../assets/images/menu.jpg");
-const HeaderWithMenu = () => {
+const logoOdpv = require("../assets/images/logoodpv.png");
+const menu = require("../assets/images/menuX.png");
+
+const HeaderWithoutMenu = () => {
     return (
         <View style={styles.headerContainer}>
             <Image source={logoOdpv} style={styles.imageLogo}></Image>
 
-            <Link href={"/menu"}>
+            <Link href='/menu'>
                 <Image source={menu} style={styles.menuIcon}></Image>
             </Link>
         </View>
     )
 }
 
-export default HeaderWithMenu
+export default HeaderWithoutMenu
 
 const styles = StyleSheet.create({
     headerContainer: {
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         width: '100%',
         height: 66,
-        marginTop: 40,
+        marginTop:40,
         paddingTop: 25,
         paddingHorizontal: 20,
         borderBottomLeftRadius: 20,
