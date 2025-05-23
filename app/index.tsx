@@ -55,7 +55,6 @@ const HomeMobileUI = () => {
                     </View>
                 </View>
             </View>
-            <PrimaryButton text="Sign Out" onPress={() => signOut(auth)} />;
         </View>
       </>
     );

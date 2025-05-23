@@ -75,7 +75,9 @@ const styles = StyleSheet.create({
     width: 95,
     height: 40,
     borderRadius: 20,
-    margin: 5
+    marginTop: 5,
+    marginBottom: 10,
+    marginLeft: 25
   },
   buttonText: {
     color: 'white',

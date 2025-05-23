@@ -30,7 +30,7 @@ const RootLayout = () => {
     <AuthProvider>
       <QueryClientProvider client={queryClient}>
         <Stack screenOptions={{ headerShown: false }}/>
-        <StatusBar />
+        <StatusBar style="dark"/>
       </QueryClientProvider>
     </AuthProvider>
   );

@@ -2,6 +2,9 @@ import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import HeaderWithMenu from '../components/headerMenu'
 import { StatusBar } from 'expo-status-bar'
+import { auth } from "@/firebaseConfig";
+import { signOut } from "firebase/auth";
+import PrimaryButton from '@/components/PrimaryButton';
 
 const profileIcon = require("../assets/images/profile-pfp.png");
 
@@ -18,17 +21,14 @@ const Perfil = () => {
         </View>
 
         <View style={styles.dataContainer}>
-          <Text style={styles.dataText}>Clinica</Text>
-          <Text style={styles.dataText}>CNPJ</Text>
-          <Text style={styles.dataText}>Endereco</Text>
-          <Text style={styles.dataText}>Tel</Text>
-          <Text style={styles.dataText} >Email</Text>
+          <Text style={styles.dataText}>Clinica: OdontoClinic</Text>
+          <Text style={styles.dataText}>CNPJ: 65.158.198/0001-81</Text>
+          <Text style={styles.dataText}>Tel: +55 11 8745-9587</Text>
+          <Text style={styles.dataText} >Email: odontoclinic@email.com</Text>
         </View>
         
         <View style={styles.buttonContainer}>
-          <Pressable style={styles.button}>
-          <Text style={styles.buttonText}>Sair</Text>
-          </Pressable>
+          <PrimaryButton text="Sign Out" onPress={() => signOut(auth)} />;
         </View>
       </View>
 

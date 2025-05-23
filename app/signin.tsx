@@ -6,8 +6,8 @@ const SigninScreen = () => {
   const router = useRouter();
 
   return (
-    <View>
-      <View style={{ marginTop: 250, width: 320, alignSelf: 'center', justifyContent:"center" }}>
+    <View className="bg-white flex-1">
+      <View>
         <LoginScreen onSuccess={() => router.replace("/")} />
       </View>
     </View>

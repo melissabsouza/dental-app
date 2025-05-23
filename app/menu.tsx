@@ -1,7 +1,11 @@
 import HeaderWithoutMenu from '@/components/headerMenuX';
-import { Link } from 'expo-router';
+import PrimaryButton from '@/components/PrimaryButton';
+import { useAuth } from '@/hooks/useAuth';
+import { Link, Redirect } from 'expo-router';
 import React from 'react';
-import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import { auth } from "@/firebaseConfig";
+import { signOut } from "firebase/auth";
 // import HeaderWithoutMenu from '../components/headerMenuX';
 
 const perfilIMG = require("../assets/images/perfil.png");
@@ -13,6 +17,11 @@ const globoIMG = require("../assets/images/globe.png");
 const configuracoesIMG = require("../assets/images/Settings.png");
 
 const Menu = () => {
+    const { isSignedIn } = useAuth();
+    
+      if (!isSignedIn) {
+        return <Redirect href="/signin" />;
+      }
     return (
         <>
             <HeaderWithoutMenu />
@@ -70,11 +79,7 @@ const Menu = () => {
             
             </View>
         <View>
-            <View style={styles.buttonContainer}>
-                <Pressable style={styles.button}>
-                    <Text style={styles.buttonText}>Sair</Text>
-                </Pressable>
-            </View>
+            <PrimaryButton text="Sign Out" onPress={() => signOut(auth)} />;
         </View>
     </>
     )
